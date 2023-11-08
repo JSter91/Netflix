@@ -1,1 +1,58 @@
-/* aggiungere con @import il vostro file css con il vostro nome es:Matte.css */
+ body {
+    margin:0;
+ }
+
+#navlinks li a{
+    
+    color:white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 14px;
+    list-style: none;
+    margin-left: 20px;
+    
+
+}
+#navlinks li a:hover
+{
+    color: rgb(143, 140, 135);
+}
+#search-icon {
+    height: 20px;
+    margin-left: auto;
+}
+#logo {
+    height: 40px;
+}
+#navbar{
+    background-color: black;
+    display:flex;
+    align-items:center;
+    padding:10px 60px;
+}
+#navlinks{
+    display:flex;
+}
+li{
+    list-style: none;
+}
+#bell{
+    height: 20px;
+    padding: 20px;
+    height: 24px;
+}
+#avatar{
+    height: 40px;
+    padding: 20px;
+}
+#bambini{
+    font-style: Arial;
+    text-decoration: none;
+    font-size: 14px;
+    color:white
+    
+}
+#bambini:hover{
+    color: rgb(143, 140, 135;
+}
+
