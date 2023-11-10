@@ -1,4 +1,25 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "NetflixSansBold";
+  src: url(font/NetflixSans-Bold.otf) format("opentype"), url(font/NetflixSans-Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "NetflixSansLight";
+  src: url(font/NetflixSans-Light.otf) format("opentype"), url(font/NetflixSans-Light.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "NetflixSansMedium";
+  src: url(font/NetflixSans-Medium.otf) format("opentype"), url(font/NetflixSans-Medium.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "NetflixSansRegular";
+  src: url(font/NetflixSans-Regular.otf) format("opentype"), url(font/NetflixSans-Regular.woff2) format("woff2");
 }
