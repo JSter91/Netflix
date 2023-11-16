@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 :root{
-   --handle-size: 6rem;
+   --handle-size: 3rem;
     --img-gap: .25rem;
 }
 
@@ -30,9 +30,15 @@
     aspect-ratio: 16/9;
     padding: var(--img-gap);
     border-radius: .5rem;
+    object-fit: cover;
+    transition: transform .3s ease;
     
 }
 
+.slider > img:hover{
+    transform: scale(1.05);
+
+}
 .handle{
     border: none;
     border-radius: .5rem;
