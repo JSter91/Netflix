@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: #fffffff7;
-}
 
 @font-face {
   font-family: "NetflixSansBold";
@@ -29,6 +23,85 @@ body {
     url(font/NetflixSans-Regular.woff2) format("woff2");
 }
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+:root{
+ --handle-size: 3rem;
+  --img-gap: .25rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fffffff7;
+  background-color: rgb(23, 23, 23);
+}
+
+/* ------------------------------ FABRIZIO PALA ----------------------------------- */
+#navbar {
+  display: flex;
+  background-color: rgb(23, 23, 23);
+  align-items: center;
+  padding: 10px 4%;
+  position: fixed;
+  width: 100%;
+  height: 68px;;
+  z-index: 2;
+}
+#navlinks {
+  display: flex;
+}
+#logo {
+  height: 70%;
+  width: 100px;
+}
+
+
+#navlinks li a {
+  color: white;
+  text-decoration: none;
+  font-family: "NetflixSansRegular";
+  font-size: 1vw;
+  list-style: none;
+  margin-left: 20px;
+}
+
+#search-icon {
+  height: 20px;
+  margin-left: auto;
+}
+#navlinks li {
+  list-style: none;
+}
+#navlinks li a:hover {
+  color: rgb(143, 140, 135);
+}
+#bell {
+  height: 20px;
+  padding: 20px;
+  width: 24px;
+}
+#avatar {
+  border: 1px solid white;
+  height: 40px;
+  width: 40px;
+  padding: 20px;
+}
+#bambini {
+  font-style: Arial;
+  text-decoration: none;
+  font-size: 1vw;
+  color: white;
+}
+#bambini:hover {
+  color: rgb(143, 140, 135);
+}
+
+
+
+
 /* ----------------------style di Salvatore--------------------- */
 
 .hero {
@@ -49,16 +122,15 @@ body {
 }
 
 .hero_content {
-  /* border: 2px solid red; */
+
   width: 50%;
   height: 80%;
-  margin: 6.5% 0 0 3%;
+  margin: 6.5% 0 0 4%;
   position: absolute;
   z-index: 2;
 }
 
 .hero_gradient {
-  /* border: 1px solid green; */
   width: 100%;
   height: 100%;
   background: linear-gradient(77deg, rgba(0, 0, 0, 0.6), transparent 85%);
@@ -71,7 +143,6 @@ body {
   position: absolute;
   width: 74%;
   height: 33%;
-  /* border: 2px solid green; */
 }
 
 #top10 {
@@ -80,7 +151,6 @@ body {
   height: 7.5%;
   top: 35%;
   align-items: center;
-  /* border: 2px solid red; */
   position: absolute;
   font-family: "NetflixSansMedium";
   color: #fffffff7;
@@ -108,7 +178,6 @@ body {
   font-size: 1.2vw;
   font-weight: 400;
   position: absolute;
-  /* border: 1px solid blue; */
   width: 72%;
   height: fit-content;
   top: 45%;
@@ -181,7 +250,6 @@ body {
   height: 100%;
   margin-left: 20%;
   left: 10%;
-  color: #fff;
 }
 
 #button2 span {
@@ -195,4 +263,228 @@ body {
 
 #buttons #button2:hover{
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ------------------------- MATTEO S ----------------------------------- */
+
+.slider_container{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider{
+  --items-per-screen: 4;
+  --slider-index: 0;
+  display: flex;
+  flex-grow: 1;
+  margin: 0 var(--img-gap);
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 250ms ease-in-out;
+
+}
+
+.slider > img{
+  flex: 0 0 calc(100% / var(--items-per-screen));
+  max-width: calc(100% / var(--items-per-screen));
+  aspect-ratio: 16/9;
+  padding: var(--img-gap);
+  border-radius: .5rem;
+  object-fit: cover;
+  transition: transform .3s ease;
+  
+}
+
+.slider > img:hover{
+  transform: scale(1.05);
+
+}
+.handle{
+  border: none;
+  border-radius: .5rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 5rem;
+  background-color: rgba(255, 255, 255, .25);
+  z-index: 10;
+  margin: var(--img-gap) 0;
+  width: var(--handle-size);
+  cursor: pointer;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  line-height: 0;
+  transition: background-color 150ms ease-in-out;
+}
+.left_handle{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.right_handle{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.handle:hover,
+.handle:focus{
+  background-color: rgba(255,255,255,.5);
+}
+
+
+.text{
+  transition: transform 150ms ease-in-out;
+}
+
+.handle:hover .text,
+.handle:focus .text{
+  transform: scale(1.2);
+}
+
+.slider_row{
+  margin-top: 2rem;
+}
+
+.slider_header{
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
+  align-items: center;
+}
+
+.slider_title{
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 100;
+  color: rgba(255, 255, 255, .9);
+}
+.progress_bar{
+  display: flex;
+  gap: .5rem;
+}
+.progress_item{
+  flex: 0 0 1.5rem;
+  min-width: 1rem;
+  height: 0.1rem;
+  background-color: rgba(255, 255, 255, .5);
+}
+.progress_item.active{
+  background-color: rgba(255, 255, 255, .9);
+}
+
+body{
+  background-color: rgb(23, 23, 23);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .slider{
+      --items-per-screen: 3;
+  }
+}
+
+@media (max-width: 574px) {
+  .slider{
+      --items-per-screen: 2;
+  }
+}
+
+/* ------------------------------------JUNELA--------------------------------- */
+footer {
+  background-color: rgb(23, 23, 23);
+  font-family: "NetflixSansLight";
+  font-size: 13px;
+  color: rgb(138, 137, 137);
+  margin: 20px auto 0 auto;
+  max-width: 1090px;
+  padding: 0 4%;
+}
+
+.social_icons {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  margin-left: 10px;
+  margin-bottom: 1em;
+}
+
+.social_icons i {
+  color: white;
+  font-size: 22px;
+  margin-right: 16px;
+}
+
+
+.links ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  padding: 0;
+ 
+}
+
+
+.links ul li {
+  display: flex;
+  flex: 0 0 50%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  list-style-type: none;
+  margin-bottom: 13px;
+  padding-right: 22px;
+}
+
+.links ul li a {
+  display: flex;
+  width: 100%;
+  color: rgb(119, 119, 119);
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 600;
+
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.button_container {
+  width: 43%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+button {
+  background-color: transparent;
+  color: rgb(119, 119, 119);
+  border: 1px solid rgb(119, 119, 119);
+  font-size: 13px;
+  padding: 6px 6px;
+  display: inline;
+  justify-content: flex-start;
+}
+
+button:hover {
+  color: white;
+}
+
+.end {
+  color: rgb(119, 119, 119);
+  font-size: 10px;
+  padding-bottom: 11px;
+  width: 65%;
+  display: flex;
+}
+@media (max-width:768px){
+    .links ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+      }
+
 }
