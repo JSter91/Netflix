@@ -39,6 +39,7 @@ body {
   box-sizing: border-box;
   color: #fffffff7;
   background-color: #141414;
+  font-family: "NetflixSansLight";
 }
 
 /* ------------------------------ FABRIZIO PALA ----------------------------------- */
@@ -46,7 +47,7 @@ body {
   display: flex;
   background: linear-gradient(black 5%, #141414 95%);
   align-items: center;
-  padding: 10px 4%;
+  padding: 10px 3.6%;
   position: fixed;
   width: 100%;
   height: 10%;
@@ -54,9 +55,9 @@ body {
   margin: 0;
 }
 
-@media (max-width :950px){
-  #navbar{
-    height: 41px;
+@media (max-width: 950px) {
+  #navbar {
+    height: 38px;
   }
 }
 
@@ -64,11 +65,30 @@ body {
   display: flex;
   justify-content: flex-start;
   padding: 0;
+  margin-left: 2%;
+}
+
+@media (max-width: 950px) {
+  #navlinks {
+    display: none;
+  }
+  #bambini {
+    display: none;
+  }
 }
 
 #logo {
-  height: 70%;
+  width: 7.2vw;
+  height: 2.5vw;
   flex-wrap: wrap;
+  align-self: center;
+}
+
+@media (max-width: 950px) {
+  #logo {
+    width: 10.5vw;
+    height: 3.5vw;
+  }
 }
 
 #navlinks li {
@@ -84,6 +104,71 @@ body {
   list-style: none;
   margin-left: 20px;
 }
+#sfoglia {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  #sfoglia {
+    display: contents;
+    background-color: inherit;
+    border: none;
+    position: relative;
+    margin: 0 20px;
+  }
+  #sfoglia a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-left: 4%;
+    font-size: 1.5vw;
+    font-family: "NetflixSansBold";
+  }
+
+  #sfoglia a i {
+    color: #fff;
+    margin: 0.5ch;
+  }
+}
+
+#links_container {
+  display: none;
+
+}
+
+@media (max-width: 950px) {
+  #sfoglia:hover #links_container {
+    display: grid;
+    border: 1px solid red;
+    grid-template-columns: 36vw;
+    grid-template-rows: repeat(6, 1fr);
+    top: 70%;
+    left: 2%;
+    height: fit-content;
+    position: absolute;
+    list-style: none;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.0) 11%,
+      rgb(255, 255, 255) 11.01%,
+      rgb(255, 255, 255) 12%,
+      rgba(0, 0, 0, 0.854) 12%
+    );
+  }
+  #sfoglia:focus-within #links_container{
+    display: block;
+  }
+  #links_container a {
+    font-family: "NetflixSansLight";
+    text-decoration: none;
+    color: #b2b0b0;
+    margin: 5% auto;
+  }
+  #links_container i{
+    margin: 0 auto 3px auto;
+   
+    
+  }
+}
 
 #navlinks li a:hover {
   color: rgb(143, 140, 135);
@@ -95,8 +180,9 @@ body {
 }
 
 #bell {
+  background-color: #fff;
   height: 20px;
-  padding: 20px;
+  margin: 0 1%;
   width: 24px;
 }
 
@@ -146,16 +232,16 @@ body {
   z-index: 2;
 }
 
-@media(max-width:950px){
+@media (max-width: 950px) {
   .hero_content {
-  margin-top:5.2%;}
-
+    margin-top: 5.2%;
+  }
 }
 
-@media(max-width:600px){
+@media (max-width: 600px) {
   .hero_content {
-  margin-top:6.8%;}
-
+    margin-top: 6.8%;
+  }
 }
 
 .hero_gradient {
@@ -216,38 +302,31 @@ body {
   grid-template-rows: 3.1vw;
   position: absolute;
   z-index: 1;
-  width:47%;
+  width: 47%;
   top: 24vw;
   margin: 1vw 0;
   gap: 3%;
   font-size: 1.2vw;
-
 }
 
-
-@media (max-width:950px) {
+@media (max-width: 950px) {
   #hero_buttons {
     grid-template-rows: 4.1vw;
     min-width: 62%;
     font-size: 1.6vw;
-    }
-
-  
+  }
 }
 
-@media screen  and (min-width:600px) and (max-width:840px){
+@media screen and (min-width: 600px) and (max-width: 840px) {
   #hero_buttons {
     margin-top: 1.5vw;
     min-width: 75%;
     grid-template-rows: 4.4vw;
     font-size: 2vw;
-
-   
-    }
+  }
 }
 
-
- #hero_buttons #hero_button1 {
+#hero_buttons #hero_button1 {
   display: flex;
   background-color: white;
   border-radius: 0.3em;
@@ -259,14 +338,13 @@ body {
   justify-content: center;
   gap: 2.5%;
   font-size: inherit;
-
 }
 
 #hero_buttons #hero_button1:hover {
   background-color: rgb(165, 163, 163);
 }
 
-#hero_buttons #hero_button1 svg{
+#hero_buttons #hero_button1 svg {
   width: 19%;
 }
 #hero_buttons #hero_button1 span {
@@ -275,10 +353,9 @@ body {
   font-size: inherit;
 }
 
-
 #hero_buttons #hero_button2 {
   display: flex;
-  background-color:rgba(109, 109, 110, 0.7);
+  background-color: rgba(109, 109, 110, 0.7);
   border-radius: 0.3em;
   padding: 5%;
   border: none;
@@ -287,25 +364,23 @@ body {
   align-items: center;
   justify-content: center;
   font-size: inherit;
-
 }
 
 #hero_buttons #hero_button2:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-#hero_buttons #hero_button2 svg{
+#hero_buttons #hero_button2 svg {
   width: 23%;
 }
 #hero_buttons #hero_button2 span {
   width: 60%;
   font-size: inherit;
-
 }
 
 .maturity-rating {
   align-items: center;
-  background-color: rgba(51,51,51,.6);
+  background-color: rgba(51, 51, 51, 0.6);
   border: 3px #dcdcdc;
   border-left-style: solid;
   box-sizing: border-box;
@@ -316,10 +391,10 @@ body {
   position: absolute;
   top: 62%;
   right: 0;
-  font-family:"NetflixSansRegular" ;
+  font-family: "NetflixSansRegular";
 }
 
-/* ------------------------- MATTEO S ----------------------------------- */
+/* ------------------------- MATTEO S & MATTEO L----------------------------------- */
 
 .sli_mb {
   margin-bottom: 100px;
@@ -420,7 +495,7 @@ body {
 
 .slider_row {
   margin-top: 2rem;
-  margin:1rem 0 0 4%;
+  margin: 1rem 0 0 4%;
 }
 
 .slider_header {
