@@ -605,7 +605,7 @@ footer {
   font-family: "NetflixSansLight";
   font-size: 13px;
   color: rgb(138, 137, 137);
-  margin: 20px auto 0 auto;
+  margin: 100px auto 0 auto;
   max-width: 1090px;
   padding: 0 4%;
 }
@@ -693,5 +693,6 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+
   }
 }
