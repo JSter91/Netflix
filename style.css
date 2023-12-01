@@ -45,7 +45,7 @@ body {
 /* ------------------------------ FABRIZIO PALA ----------------------------------- */
 #navbar {
   display: flex;
-  background: linear-gradient(black 5%, #141414 95%);
+  background: linear-gradient(to bottom, black, transparent);
   align-items: center;
   padding: 10px 3.6%;
   position: fixed;
@@ -139,11 +139,10 @@ body {
 @media (max-width: 950px) {
   #sfoglia:hover #links_container {
     display: grid;
-    border: 1px solid red;
     grid-template-columns: 36vw;
     grid-template-rows: repeat(6, 1fr);
     top: 70%;
-    left: 2%;
+    left: 5.5%;
     height: fit-content;
     position: absolute;
     list-style: none;
@@ -157,6 +156,16 @@ body {
   #sfoglia:focus-within #links_container{
     display: block;
   }
+
+  #sfoglia:not(:checked):focus-within #links_container {
+    display: none;
+}
+}
+
+
+
+
+
   #links_container a {
     font-family: "NetflixSansLight";
     text-decoration: none;
@@ -168,15 +177,25 @@ body {
    
     
   }
-}
 
 #navlinks li a:hover {
   color: rgb(143, 140, 135);
 }
 
+.right_nav{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  width: 30%;
+  justify-content: flex-end;
+  gap: 4%;
+  
+}
+
 #search-icon {
   height: 20px;
   margin-left: auto;
+  margin-right: 15px;
 }
 
 #bell {
@@ -191,6 +210,21 @@ body {
   height: 40px;
   width: 40px;
   padding: 20px;
+}
+.right_nav_caret {
+  border-color: #fff transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    height: 0;
+    margin-left: 10px;
+    transition: transform 367ms cubic-bezier(.21,0,.07,1);
+    width: 0;
+}
+
+@media (max-width:950px){
+  .right_nav_caret {
+    display: none;
+  }
 }
 
 #bambini {
@@ -338,6 +372,8 @@ body {
   justify-content: center;
   gap: 2.5%;
   font-size: inherit;
+  cursor: pointer;
+
 }
 
 #hero_buttons #hero_button1:hover {
@@ -364,6 +400,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: inherit;
+  cursor: pointer;
+
 }
 
 #hero_buttons #hero_button2:hover {
@@ -392,6 +430,12 @@ body {
   top: 62%;
   right: 0;
   font-family: "NetflixSansRegular";
+}
+
+.first_row{
+  margin-top: -16.5%;
+  position: absolute;
+  z-index: 10;
 }
 
 /* ------------------------- MATTEO S & MATTEO L----------------------------------- */
@@ -442,7 +486,7 @@ body {
   margin: var(--img-gap) 0;
   width: var(--handle-size);
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.4vw;
   display: flex;
   align-items: center;
   justify-content: center;
