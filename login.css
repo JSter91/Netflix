@@ -7,6 +7,19 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: 21;
+  }
+  #video::-webkit-media-controls {
+    display: none !important;
+  }  
+
 body {
     background: #000;
 }
