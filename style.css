@@ -43,7 +43,6 @@ body {
   position: relative;
 }
 
-
 /* ------------------------------ FABRIZIO PALA ----------------------------------- */
 #navbar {
   display: flex;
@@ -219,7 +218,7 @@ body {
   align-items: center;
 }
 
-#avatar a {
+#avatar > a {
   display: flex;
   width: 1.6rem;
   height: 1.6rem;
@@ -239,6 +238,108 @@ body {
   margin-left: 10px;
   transition: transform 367ms cubic-bezier(0.21, 0, 0.07, 1);
   width: 0;
+}
+
+.menu_profili {
+  display: none;
+}
+#avatar:hover .menu_profili {
+  display: grid;
+}
+#avatar:focus-within .menu_profili {
+  display: grid;
+}
+
+.menu_profili {
+  display: none;
+  grid-template-columns: 1;
+  grid-template-rows: 8% 46% 36% 10%;
+  position: absolute;
+  width: 180px;
+  height: 400px;
+  top: 20px;
+  right: 3.5%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0.854) 8%);
+  z-index: 22;
+}
+
+.profili {
+  display: block;
+  height: fit-content;
+  gap: 3%;
+  padding: 0.5rem;
+  border-bottom: 1px solid grey;
+  font-family: "NetflixSansRegular";
+}
+
+#profili_caret {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profili a {
+  display: flex;
+  text-decoration: none;
+  color: #c6c4c4;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.profili a i {
+  margin-right: 10px;
+  height: 5%;
+}
+.profili span {
+  font-size: 11px;
+  padding-top: 1%;
+  font-weight: 500;
+}
+.profili span:hover {
+  color: #fff;
+}
+
+.profili_bambini {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 0.5rem;
+  border-bottom: 1px solid grey;
+}
+
+.profili_bambini p {
+  margin-top: 2%;
+  font-size: 11px;
+}
+
+.profili_bambini a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-size: 11px;
+  margin: 3% 0;
+}
+
+.profili_bambini a:hover {
+  color: #fff;
+}
+.profili_bambini i {
+  margin-right: 10px;
+}
+
+.exit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.exit a:hover {
+  color: #fff;
 }
 
 @media (max-width: 950px) {
